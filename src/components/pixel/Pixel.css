@@ -1,4 +1,7 @@
 .Pixel {
     height: 5px;
     width: 5px;
+    margin: 1px;
+    flex-grow: 1;
+    display: inline-block;
 }

@@ -1,0 +1,7 @@
+.Canvas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 60px;
+}
