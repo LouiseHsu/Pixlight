@@ -2,6 +2,6 @@
     height: 5px;
     width: 5px;
     margin: 1px;
-    flex-grow: 1;
+    flex-grow: 0;
     display: inline-block;
 }
