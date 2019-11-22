@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Canvas from '../canvas/Canvas'
-import logo from '../../assets/images/logo.svg';
 import './App.css';
 
-const App = props =>  {
-  return (
-    <div className="App">
-      <Canvas/>
-    </div>
-  );
+const App = props => {
+    const [BrushColour, setBrushColour] = useState('#ffffff');
+
+    const app = <div className="App">
+        <Canvas
+            size={'Test'}
+            brushColour={BrushColour}
+        />
+    </div>;
+
+    return app;
 };
 
 export default App;

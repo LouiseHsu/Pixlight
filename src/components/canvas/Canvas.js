@@ -3,18 +3,17 @@ import Pixel from '../pixel/Pixel';
 import './Canvas.css';
 
 const canvasSizeEnum = Object.freeze({
-    TEST: {width: 2, height: 1},
+    TEST: {width: 5, height: 5},
     SMALL: {width: 50, height: 50},
     MEDIUM: {width: 100, height: 100},
     LARGE: {width: 250, height: 250}
 });
 const Canvas = props => {
 
-    const [canvasSize, setCanvasSize] = useState('Medium');
+    const [canvasSize, setCanvasSize] = useState(props.size);
     const [canvasPixels, setCanvasPixels] = useState([]);
 
-    const handleSize = (size) => {
-        setCanvasSize(size);
+    const handleSize = () => {
         let pixelNum;
 
         switch (canvasSize) {
@@ -24,21 +23,29 @@ const Canvas = props => {
             case 'Medium':
                 pixelNum = canvasSizeEnum.MEDIUM.width * canvasSizeEnum.MEDIUM.height;
                 break;
+            case 'Small':
+                pixelNum = canvasSizeEnum.SMALL.width * canvasSizeEnum.SMALL.height;
+                break;
+            case 'Test':
+                pixelNum = canvasSizeEnum.TEST.width * canvasSizeEnum.TEST.height;
+                break;
             default:
                 pixelNum = 1;
         }
 
+        console.log(props);
         let pixels = [];
         for (let i = 0; i < pixelNum; i++) {
-            pixels.push(<Pixel key={i} />)
+            pixels.push(<Pixel key={i}
+                               brushColour={props.brushColour}/>)
         }
 
         setCanvasPixels(pixels);
     };
 
     useEffect(() => {
-        handleSize(canvasSize);
-    }, [props.size]);
+        handleSize();
+    }, [canvasSize]);
 
     return (
         <div className="Canvas">

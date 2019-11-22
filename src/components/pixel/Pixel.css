@@ -1,7 +1,8 @@
 .Pixel {
     height: 5px;
     width: 5px;
-    margin: 1px;
+    margin-left: 1px;
+    margin-bottom: 1px;
     flex-grow: 0;
     display: inline-block;
 }
