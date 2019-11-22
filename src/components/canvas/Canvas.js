@@ -13,6 +13,8 @@ const Canvas = props => {
     const [canvasSize, setCanvasSize] = useState(props.size);
     const [canvasPixels, setCanvasPixels] = useState([]);
 
+    let {brushColour} = props;
+
     const handleSize = () => {
         let pixelNum;
 
@@ -33,11 +35,10 @@ const Canvas = props => {
                 pixelNum = 1;
         }
 
-        console.log(props);
         let pixels = [];
         for (let i = 0; i < pixelNum; i++) {
             pixels.push(<Pixel key={i}
-                               brushColour={props.brushColour}/>)
+                               brushColour={brushColour}/>)
         }
 
         setCanvasPixels(pixels);
@@ -46,6 +47,10 @@ const Canvas = props => {
     useEffect(() => {
         handleSize();
     }, [canvasSize]);
+
+    useEffect(() => {
+        handleSize();
+    }, [props.brushColour]);
 
     return (
         <div className="Canvas">

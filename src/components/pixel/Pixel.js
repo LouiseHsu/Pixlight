@@ -3,13 +3,32 @@ import './Pixel.css'
 
 const Pixel = props => {
     const [colour, setColour] = useState('#000000');
+    const [brushColourState, setBrushColour] = useState(props.brushColour);
+    const [isHovered, setHovered] = useState(false);
 
     const handleClick = (e) => {
-        console.log(e);
-        setColour('#ffffff');
+        setColour(brushColourState);
     };
 
-    return <div className = "Pixel" style={{backgroundColor: colour}} onMouseDown={(e) => handleClick(e)}/>
+    const onHover = () => {
+        setHovered(true );
+    };
+
+    const onLeave = () => {
+        setHovered(false);
+    };
+
+    useEffect(() => {
+        console.log('changed');
+        setBrushColour(props.brushColour);
+    }, [props.brushColour]);
+
+    return <div className = "Pixel" style={{backgroundColor: colour}}
+                key = {props.key}
+                onMouseEnter={onHover}
+                onMouseLeave={onLeave}
+                onMouseDown={handleClick}
+            />
 
 
 };
