@@ -1,7 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
-export default function configureStore(initialState={}) {
+
+let brush = {
+  color: '#ffffff',
+  size: 1
+};
+
+export default function configureStore(initialState = brush) {
     return createStore(
         rootReducer,
         initialState,

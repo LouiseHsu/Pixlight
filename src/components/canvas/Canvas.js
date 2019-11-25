@@ -17,39 +17,61 @@ const Canvas = props => {
 
     const handleMouseDown = () => {
         setClicked(true);
-    }
+    };
 
     const handleMouseUp = () => {
         setClicked(false);
-    }
+    };
 
-    const handleSize = () => {
-        let pixelNum;
-
+    const getDimensions = () => {
+        let total;
+        let width;
+        let height;
         switch (canvasSize) {
             case 'Large':
-                pixelNum = canvasSizeEnum.LARGE.width * canvasSizeEnum.LARGE.height;
+                width = canvasSizeEnum.LARGE.width;
+                height = canvasSizeEnum.LARGE.height;
+                total = canvasSizeEnum.LARGE.width * canvasSizeEnum.LARGE.height;
                 break;
             case 'Medium':
-                pixelNum = canvasSizeEnum.MEDIUM.width * canvasSizeEnum.MEDIUM.height;
+                width = canvasSizeEnum.MEDIUM.width;
+                height = canvasSizeEnum.MEDIUM.height;
+                total = canvasSizeEnum.MEDIUM.width * canvasSizeEnum.MEDIUM.height;
                 break;
             case 'Small':
-                pixelNum = canvasSizeEnum.SMALL.width * canvasSizeEnum.SMALL.height;
-                break;
-            case 'Test':
-                pixelNum = canvasSizeEnum.TEST.width * canvasSizeEnum.TEST.height;
+                width = canvasSizeEnum.SMALL.width;
+                height = canvasSizeEnum.SMALL.height;
+                total = canvasSizeEnum.SMALL.width * canvasSizeEnum.SMALL.height;
                 break;
             default:
-                pixelNum = 1;
+                total = 1;
         }
+
+        return {
+            total, width, height
+        };
+    };
+
+    const handleSize = () => {
+        let dimensions = getDimensions();
+        let pixelWidth = dimensions.width;
 
         let pixels = [];
-        for (let i = 0; i < pixelNum; i++) {
-            pixels.push(<Pixel key={i}
-                               brushColour={brushColour}
-                               clicked = {clicked}/>)
-        }
+        // for (let i = 0; i < dimensions.total; i++) {
+        //     pixels.push(<Pixel key={i}
+        //                        brushColour={brushColour}
+        //                        clicked={clicked}/>)
+        // }
+        console.log(dimensions);
+        console.log(canvasSize);
 
+        for (let x = 0; x < dimensions.width; x++) {
+            for (let y = 0; y < dimensions.height; y++) {
+                pixels.push(<Pixel key={x + " " + y}
+                                   brushColour={brushColour}
+                                   clicked={clicked}/>)
+            }
+        }
         setCanvasPixels(pixels);
     };
 
@@ -68,12 +90,13 @@ const Canvas = props => {
 
     return (
         <div className="Canvas"
-             onMouseUp = {handleMouseDown}
-             onMouseDown = {handleMouseUp}>
+             onMouseUp={handleMouseDown}
+             onMouseDown={handleMouseUp}>
             {canvasPixels}
         </div>);
-};
 
+    // handle click in canvas instead?
+};
 
 
 export default Canvas;

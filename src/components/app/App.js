@@ -36,7 +36,7 @@ const App = props => {
 
     return <div className="App">
         <Canvas
-            size={'Test'}
+            size={'Small'}
             brushColour={BrushColour}
         />
         <button onClick={randomBrush}>Generate Random Brush</button>
