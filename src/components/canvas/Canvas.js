@@ -12,8 +12,16 @@ const Canvas = props => {
 
     const [canvasSize, setCanvasSize] = useState(props.size);
     const [canvasPixels, setCanvasPixels] = useState([]);
+    const [clicked, setClicked] = useState(false);
+    const [brushColour, setBrushColour] = useState(props.brushColour);
 
-    let {brushColour} = props;
+    const handleMouseDown = () => {
+        setClicked(true);
+    }
+
+    const handleMouseUp = () => {
+        setClicked(false);
+    }
 
     const handleSize = () => {
         let pixelNum;
@@ -38,7 +46,8 @@ const Canvas = props => {
         let pixels = [];
         for (let i = 0; i < pixelNum; i++) {
             pixels.push(<Pixel key={i}
-                               brushColour={brushColour}/>)
+                               brushColour={brushColour}
+                               clicked = {clicked}/>)
         }
 
         setCanvasPixels(pixels);
@@ -49,11 +58,18 @@ const Canvas = props => {
     }, [canvasSize]);
 
     useEffect(() => {
+        setBrushColour(props.brushColour);
         handleSize();
     }, [props.brushColour]);
 
+    useEffect(() => {
+        setClicked(clicked)
+    }, [clicked]);
+
     return (
-        <div className="Canvas">
+        <div className="Canvas"
+             onMouseUp = {handleMouseDown}
+             onMouseDown = {handleMouseUp}>
             {canvasPixels}
         </div>);
 };
