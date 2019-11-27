@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import Canvas from '../canvas/Canvas'
-import {connect} from 'react-redux';
-import {simpleAction} from '../../actions/simpleAction';
+import {connect, Provider} from 'react-redux';
+import store from '../../store'
+import {updateBrush} from '../../actions/updateBrush';
 import './App.css';
 
 function getRandomColor() {
@@ -18,7 +19,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    simpleAction: () => dispatch(simpleAction())
+    updateBrush: (colour) => dispatch(updateBrush(colour))
 });
 
 
@@ -27,20 +28,21 @@ const App = props => {
 
     const randomBrush = () => {
         console.log("set");
-        setBrushColour(getRandomColor());
+        // setBrushColour(getRandomColor());
+        updateBrush(getRandomColor());
     };
 
-    const simpleAction = (event) => {
-        props.simpleAction();
+    const updateBrush = (event) => {
+        props.updateBrush();
     };
 
     return <div className="App">
         <Canvas
             size={'Small'}
-            brushColour={BrushColour}
+            brushColour={store}
         />
         <button onClick={randomBrush}>Generate Random Brush</button>
-        <button onClick={simpleAction}>Test redux action</button>
+        <button onClick={updateBrush}>Test redux action</button>
         <pre>
          {
              JSON.stringify(props)
