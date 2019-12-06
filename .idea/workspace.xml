@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39af03ae-352e-42eb-94d8-07d254b64862" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/actions/simpleAction.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/reducers/rootReducer.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/reducers/simpleReducer.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/actions/updateBrush.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/simpleAction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/simpleReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/simpleReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+>>>>>>> da17b6a7c300f3d70411b8b4c5345bda2fab261f
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +27,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="CSS File" />
+>>>>>>> da17b6a7c300f3d70411b8b4c5345bda2fab261f
         <option value="JavaScript File" />
       </list>
     </option>
@@ -29,9 +43,25 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+=======
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/app" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
+    </key>
+>>>>>>> da17b6a7c300f3d70411b8b4c5345bda2fab261f
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -56,6 +86,13 @@
       <option name="presentableId" value="Default" />
       <updated>1574217813234</updated>
       <workItem from="1574217815198" duration="1615000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1574267899653" duration="21811000" />
+      <workItem from="1574519899531" duration="783000" />
+      <workItem from="1574657368868" duration="800000" />
+      <workItem from="1574703549353" duration="6575000" />
+>>>>>>> da17b6a7c300f3d70411b8b4c5345bda2fab261f
     </task>
     <servers />
   </component>
@@ -67,10 +104,30 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State />
+=======
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+>>>>>>> da17b6a7c300f3d70411b8b4c5345bda2fab261f
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/pixel/Pixel.js</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+>>>>>>> da17b6a7c300f3d70411b8b4c5345bda2fab261f
 </project>

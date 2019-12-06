@@ -1,8 +1,8 @@
 export default (state = {}, action) => {
     switch (action.type) {
-        case 'SIMPLE_ACTION':
+        case 'UPDATE_BRUSH':
             return {
-                result: action.payload
+                colour: action.colour
             };
         default:
             return state
