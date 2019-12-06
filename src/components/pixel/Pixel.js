@@ -12,7 +12,7 @@ const Pixel = props => {
     };
 
     const onHover = () => {
-        if (isClicked) {
+        if (isClicked) {w
             handleClick();
         }
     };
@@ -35,4 +35,4 @@ const Pixel = props => {
 
 };
 
-export default Pixel;
+export default React.memo(Pixel);
