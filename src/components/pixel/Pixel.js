@@ -35,4 +35,4 @@ const Pixel = props => {
 
 };
 
-export default Pixel;
+export default React.memo(Pixel);
