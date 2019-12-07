@@ -1,4 +1,6 @@
-export const updateBrush = colour => ({
-    type: 'UPDATE_BRUSH',
-    colour
-});
+export const updateBrush = (colour) => {
+    return {
+        type: 'UPDATE_BRUSH',
+        colour : colour
+    }
+};

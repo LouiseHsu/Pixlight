@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Pixel from '../pixel/Pixel';
 import './Canvas.css';
-// import store from "../../store";
-import {connect} from "react-redux";
-import {updateBrush} from "../../actions/updateBrush";
 
 const canvasSizeEnum = Object.freeze({
     TEST: {width: 5, height: 5},
@@ -11,16 +8,6 @@ const canvasSizeEnum = Object.freeze({
     MEDIUM: {width: 100, height: 100},
     LARGE: {width: 250, height: 250}
 });
-
-const mapStateToProps = state => ({
-    ...state
-});
-
-const mapDispatchToProps = dispatch => ({
-    updateBrush: (colour) => dispatch(updateBrush(colour))
-});
-
-
 
 const Canvas = props => {
 
@@ -71,8 +58,6 @@ const Canvas = props => {
         let pixelWidth = dimensions.width;
 
         let pixels = [];
-        console.log(dimensions);
-        console.log(canvasSize);
 
         for (let x = 0; x < dimensions.width; x++) {
             for (let y = 0; y < dimensions.height; y++) {
@@ -107,5 +92,4 @@ const Canvas = props => {
     // handle click in canvas instead?
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Canvas);
+export default Canvas;

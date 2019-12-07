@@ -1,54 +1,35 @@
 import React, {useState} from 'react';
 import Canvas from '../canvas/Canvas'
-import {connect, Provider} from 'react-redux';
-import store from '../../store'
+import {useDispatch, useSelector} from 'react-redux';
 import {updateBrush} from '../../actions/updateBrush';
 import './App.css';
 
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
     let color = '#';
-    for (var i = 0; i < 6; i++) {
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
 }
 
-const mapStateToProps = state => ({
-    ...state
-});
+function App() {
+    const dispatch = useDispatch();
+    const [BrushColour, setBrushColour] = useState(useSelector(state => state.brushState.colour));
 
-const mapDispatchToProps = dispatch => ({
-    updateBrush: (colour) => dispatch(updateBrush(colour))
-});
-
-
-const App = props => {
-    const [BrushColour, setBrushColour] = useState('#ff00ff');
 
     const randomBrush = () => {
-        console.log("set");
         // setBrushColour(getRandomColor());
         updateBrush(getRandomColor());
-    };
-
-    const updateBrush = (event) => {
-        props.updateBrush();
     };
 
     return <div className="App">
         <Canvas
             size={'Small'}
-            brushColour={store}
+            brushColour={BrushColour}
         />
-        <button onClick={randomBrush}>Generate Random Brush</button>
-        <button onClick={updateBrush}>Test redux action</button>
-        <pre>
-         {
-             JSON.stringify(props)
-         }
-        </pre>
+        <button onClick={() => dispatch(updateBrush(getRandomColor()))}>Generate Random Brush</button>
     </div>;
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

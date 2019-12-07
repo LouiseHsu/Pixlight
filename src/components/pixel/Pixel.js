@@ -1,30 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import './Pixel.css'
+import {useSelector} from "react-redux";
 
 const Pixel = props => {
     const [colour, setColour] = useState('#000000');
     const [brushColourState, setBrushColour] = useState(props.brushColour);
     const [isHovered, setHovered] = useState(false);
     const [isClicked, setClicked] = useState(props.clicked);
+    const currBrushColour = useSelector(state => state.brushState.colour);
 
-    const handleClick = (e) => {
-        setColour(brushColourState);
-    };
+
+    function handleClick (e) {
+        setColour(currBrushColour);
+        // console.log(useSelector(state => state));
+        console.log(currBrushColour);
+    }
 
     const onHover = () => {
-        if (isClicked) {w
+        if (isClicked) {
             handleClick();
         }
     };
-
-    useEffect(() => {
-        console.log(props);
-        setBrushColour(props.brushColour);
-    }, [props, props.brushColour]);
-
-    useEffect(() => {
-        setClicked(props.clicked);
-    }, [props.clicked]);
 
     return <div className = "Pixel" style={{backgroundColor: colour}}
                 key = {props.key}
@@ -35,4 +31,4 @@ const Pixel = props => {
 
 };
 
-export default React.memo(Pixel);
+export default Pixel;

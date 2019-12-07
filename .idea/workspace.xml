@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39af03ae-352e-42eb-94d8-07d254b64862" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/updateBrush.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/brushReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/simpleAction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/updateBrush.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/updateBrush.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/simpleReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/simpleReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pixel/Pixel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pixel/Pixel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/simpleReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +36,11 @@
   </component>
   <component name="ProjectId" id="1TrUfpDEd5t3tNrb3g9wArBTvNi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -48,15 +58,15 @@
       <recent name="$PROJECT_DIR$/src/assets/images" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -95,15 +105,14 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/pixel/Pixel.js</url>
-          <line>36</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="1068" y="371" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575703193245">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1068" y="371" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1575703193245" />
+    <state x="831" y="304" width="607" height="526" key="find.popup" timestamp="1575712041726">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="831" y="304" width="607" height="526" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1575712041726" />
   </component>
 </project>
