@@ -6,14 +6,12 @@ const Pixel = props => {
     const [colour, setColour] = useState('#000000');
     const [brushColourState, setBrushColour] = useState(props.brushColour);
     const [isHovered, setHovered] = useState(false);
-    const [isClicked, setClicked] = useState(props.clicked);
+    const isClicked = useSelector(state => state.mouseState);
     const currBrushColour = useSelector(state => state.brushState.colour);
 
 
-    function handleClick (e) {
+    function handleClick () {
         setColour(currBrushColour);
-        // console.log(useSelector(state => state));
-        console.log(currBrushColour);
     }
 
     const onHover = () => {
@@ -23,7 +21,7 @@ const Pixel = props => {
     };
 
     return <div className = "Pixel" style={{backgroundColor: colour}}
-                key = {props.key}
+                id={props.id}
                 onMouseEnter={onHover}
                 onMouseDown={handleClick}
             />

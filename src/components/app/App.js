@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Canvas from '../canvas/Canvas'
 import {useDispatch, useSelector} from 'react-redux';
 import {updateBrush} from '../../actions/updateBrush';
+import {leftMouseClicked} from '../../actions/leftMouseClicked';
 import './App.css';
 
 function getRandomColor() {
@@ -15,18 +16,14 @@ function getRandomColor() {
 
 function App() {
     const dispatch = useDispatch();
-    const [BrushColour, setBrushColour] = useState(useSelector(state => state.brushState.colour));
 
-
-    const randomBrush = () => {
-        // setBrushColour(getRandomColor());
-        updateBrush(getRandomColor());
+    const handleLeftClick = () => {
+        dispatch(leftMouseClicked());
     };
 
-    return <div className="App">
+    return <div className="App" onMouseDown={handleLeftClick} onMouseUp={handleLeftClick}>
         <Canvas
             size={'Small'}
-            brushColour={BrushColour}
         />
         <button onClick={() => dispatch(updateBrush(getRandomColor()))}>Generate Random Brush</button>
     </div>;
