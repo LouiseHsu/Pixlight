@@ -14,15 +14,6 @@ const Canvas = props => {
     const [canvasSize, setCanvasSize] = useState(props.size);
     const [canvasPixels, setCanvasPixels] = useState([]);
     const [clicked, setClicked] = useState(false);
-    const [brushColour, setBrushColour] = useState(props.brushColour);
-
-    const handleMouseDown = () => {
-        setClicked(true);
-    };
-
-    const handleMouseUp = () => {
-        setClicked(false);
-    };
 
     const getDimensions = () => {
         let total;
@@ -55,7 +46,6 @@ const Canvas = props => {
 
     const handleSize = () => {
         let dimensions = getDimensions();
-        let pixelWidth = dimensions.width;
 
         let pixels = [];
         // let pixelArray =
@@ -63,9 +53,9 @@ const Canvas = props => {
         for (let x = 1; x <= dimensions.width; x++) {
             let pixelRow = [];
             for (let y = 1; y <= dimensions.height; y++) {
+
                 pixelRow.push(<Pixel key={x + " " + y}
-                                   id = {x + " " + y}
-                                   clicked={clicked}/>)
+                                   id = {x + " " + y}/>)
             }
             pixels.push(pixelRow);
         }
@@ -77,23 +67,13 @@ const Canvas = props => {
         handleSize();
     }, [canvasSize]);
 
-    useEffect(() => {
-        setBrushColour(props.brushColour);
-        handleSize();
-    }, [props.brushColour]);
-
-    useEffect(() => {
-        setClicked(clicked)
-    }, [clicked]);
-
     return (
-        <div className="Canvas"
-             onMouseUp={handleMouseDown}
-             onMouseDown={handleMouseUp}>
+        <div className="Canvas">
             {canvasPixels}
         </div>);
 
     // handle click in canvas instead?
 };
 
-export default Canvas;
+// export default Canvas;
+export default React.memo(Canvas, false);

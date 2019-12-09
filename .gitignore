@@ -40,3 +40,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea/encodings.xml
+.idea/workspace.xml
+*.xml

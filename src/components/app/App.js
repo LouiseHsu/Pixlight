@@ -21,7 +21,7 @@ function App() {
         dispatch(leftMouseClicked());
     };
 
-    return <div className="App" onMouseDown={handleLeftClick} onMouseUp={handleLeftClick}>
+    return <div className="App" onMouseDown={handleLeftClick} onMouseUp={handleLeftClick} onClick={console.log("hello")}>
         <Canvas
             size={'Small'}
         />
