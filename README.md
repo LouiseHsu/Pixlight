@@ -1,1 +1,1 @@
-Simple in browser pixel art editor.
+Simple in browser pixel art editor written using React and Redux
