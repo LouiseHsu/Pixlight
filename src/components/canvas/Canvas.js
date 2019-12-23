@@ -54,8 +54,10 @@ const Canvas = props => {
             let pixelRow = [];
             for (let y = 1; y <= dimensions.height; y++) {
 
-                pixelRow.push(<Pixel key={x + " " + y}
-                                   id = {x + " " + y}/>)
+                pixelRow.push(<Pixel key = {x + " " + y}
+                                     id = {x + " " + y}
+                                     x = {x}
+                                     y = {y}/>)
             }
             pixels.push(pixelRow);
         }
