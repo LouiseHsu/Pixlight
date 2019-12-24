@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
 import Canvas from '../canvas/Canvas'
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {updateBrush} from '../../actions/updateBrush';
-import {leftMouseClicked} from '../../actions/leftMouseClicked';
 import globalMouseState from "../../util/globalMouseState";
 import './App.css';
+import React from "react";
 
 function getRandomColor() {
     let letters = '0123456789ABCDEF';

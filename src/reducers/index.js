@@ -1,10 +1,10 @@
-import brushReducer from './brushReducer'
 import {combineReducers} from "redux";
-import mouseReducer from "./mouseReducer";
+import brushReducer from './brushReducer'
+import canvasReducer from "./canvasReducer";
 
 const allReducers = combineReducers({
     brushState : brushReducer,
-    mouseState : mouseReducer
+    canvasState : canvasReducer
 });
 
 export default allReducers;

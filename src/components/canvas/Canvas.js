@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Pixel from '../pixel/Pixel';
 import './Canvas.css';
+import {useDispatch} from "react-redux";
+import {updateCanvasModel} from "../../actions/updateCanvasModel";
 
 const canvasSizeEnum = Object.freeze({
     TEST: {width: 5, height: 5},
@@ -13,7 +15,7 @@ const Canvas = props => {
 
     const [canvasSize, setCanvasSize] = useState(props.size);
     const [canvasPixels, setCanvasPixels] = useState([]);
-    const [clicked, setClicked] = useState(false);
+    const dispatch = useDispatch();
 
     const getDimensions = () => {
         let total;
@@ -48,8 +50,6 @@ const Canvas = props => {
         let dimensions = getDimensions();
 
         let pixels = [];
-        // let pixelArray =
-
         for (let x = 1; x <= dimensions.width; x++) {
             let pixelRow = [];
             for (let y = 1; y <= dimensions.height; y++) {
@@ -63,6 +63,7 @@ const Canvas = props => {
         }
 
         setCanvasPixels(pixels);
+        dispatch(updateCanvasModel(pixels));
     };
 
     useEffect(() => {
@@ -73,8 +74,6 @@ const Canvas = props => {
         <div className="Canvas">
             {canvasPixels}
         </div>);
-
-    // handle click in canvas instead?
 };
 
 // export default Canvas;

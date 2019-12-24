@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './Pixel.css'
 import {useSelector} from "react-redux";
 import globalMouseState from "../../util/globalMouseState";
 
 const Pixel = React.memo(props => {
     const [colour, setColour] = useState('#000000');
-    const isClicked = useSelector(state => state.mouseState);
     const currBrushColour = useSelector(state => state.brushState.colour);
 
     function handleClick () {
