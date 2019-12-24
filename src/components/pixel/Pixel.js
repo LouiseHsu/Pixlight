@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Pixel.css'
 import {useSelector} from "react-redux";
+import globalMouseState from "../../util/globalMouseState";
 
 const Pixel = React.memo(props => {
     const [colour, setColour] = useState('#000000');
@@ -12,7 +13,9 @@ const Pixel = React.memo(props => {
     }
 
     const onHover = () => {
-        if (isClicked) {
+        let state = new globalMouseState();
+        console.log(state);
+        if (state.mouseState.leftClick) {
             handleClick();
         }
     };

@@ -3,6 +3,7 @@ import Canvas from '../canvas/Canvas'
 import {useDispatch, useSelector} from 'react-redux';
 import {updateBrush} from '../../actions/updateBrush';
 import {leftMouseClicked} from '../../actions/leftMouseClicked';
+import globalMouseState from "../../util/globalMouseState";
 import './App.css';
 
 function getRandomColor() {
@@ -15,10 +16,11 @@ function getRandomColor() {
 }
 
 function App() {
+    let mouseState = new globalMouseState();
     const dispatch = useDispatch();
 
     const handleLeftClick = () => {
-        dispatch(leftMouseClicked());
+        mouseState.toggleLeftClick();
     };
 
     return <div className="App" onMouseDown={handleLeftClick} onMouseUp={handleLeftClick} onClick={console.log("hello")}>

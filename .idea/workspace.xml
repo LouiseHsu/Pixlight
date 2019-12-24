@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39af03ae-352e-42eb-94d8-07d254b64862" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/util/globalMouseState.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/mouseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/mouseReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pixel/Pixel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pixel/Pixel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/globalMouseState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/globalMouseState.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
