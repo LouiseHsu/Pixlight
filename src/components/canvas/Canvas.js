@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Pixel from '../pixel/Pixel';
 import './Canvas.css';
-import {useDispatch} from "react-redux";
-import {updateCanvasModel} from "../../actions/updateCanvasModel";
+import {useDispatch, useSelector} from "react-redux";
+import {setCanvasModel} from "../../actions/setCanvasModel";
 
 const canvasSizeEnum = Object.freeze({
     TEST: {width: 5, height: 5},
@@ -12,16 +12,15 @@ const canvasSizeEnum = Object.freeze({
 });
 
 const Canvas = props => {
-
-    const [canvasSize, setCanvasSize] = useState(props.size);
     const [canvasPixels, setCanvasPixels] = useState([]);
+    let startingColour = useSelector(state => state.brushState.colour);
     const dispatch = useDispatch();
 
     const getDimensions = () => {
         let total;
         let width;
         let height;
-        switch (canvasSize) {
+        switch (props.size) {
             case 'Large':
                 width = canvasSizeEnum.LARGE.width;
                 height = canvasSizeEnum.LARGE.height;
@@ -46,7 +45,7 @@ const Canvas = props => {
         };
     };
 
-    const handleSize = () => {
+    const createCanvas = () => {
         let dimensions = getDimensions();
 
         let pixels = [];
@@ -61,14 +60,27 @@ const Canvas = props => {
             }
             pixels.push(pixelRow);
         }
-
         setCanvasPixels(pixels);
-        dispatch(updateCanvasModel(pixels));
+    };
+
+    const createCanvasModel = () => {
+        let dimensions = getDimensions();
+
+        let pixels = [];
+        for (let x = 1; x <= dimensions.width; x++) {
+            let pixelRow = [];
+            for (let y = 1; y <= dimensions.height; y++) {
+                pixelRow.push(startingColour);
+            }
+            pixels.push(pixelRow);
+        }
+        dispatch(setCanvasModel(pixels));
     };
 
     useEffect(() => {
-        handleSize();
-    }, [canvasSize]);
+        createCanvas();
+        createCanvasModel();
+    }, [props.size]);
 
     return (
         <div className="Canvas">

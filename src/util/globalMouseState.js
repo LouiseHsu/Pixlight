@@ -1,20 +1,3 @@
-// var  globalMouseState = {
-//     let mouseState = {
-//         leftClick : true
-//     };
-//
-//     getMouseSate () {
-//         return this.mouseState;
-//     }
-//
-//     setLeftClickTrue() {
-//         this.mouseState.leftClick = true;
-//     }
-//
-//     setLeftClickFalse() {
-//         this.mouseState.leftClick = false;
-//     }
-// }
 let instance = null;
 class globalMouseState {
     constructor() {
@@ -32,11 +15,6 @@ class globalMouseState {
     toggleLeftClick () {
         this.mouseState.leftClick = !this.mouseState.leftClick;
     }
-
-    setLeftClickFalse () {
-        this.mouseState.leftClick = false;
-    }
-
 }
 
 export default globalMouseState;

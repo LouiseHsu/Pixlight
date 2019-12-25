@@ -1,6 +1,6 @@
-export const updateCanvasModel = (pixelArray) => {
+export const updateCanvasModel = (updatedPixels) => {
     return {
         type: 'UPDATE_CANVAS_MODEL',
-        pixelArray : pixelArray
+        updatedPixels : updatedPixels
     }
 };
