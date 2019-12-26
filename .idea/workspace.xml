@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39af03ae-352e-42eb-94d8-07d254b64862" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/updateCanvasModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/updateCanvasModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pixel/Pixel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pixel/Pixel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/canvasReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/canvasReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
