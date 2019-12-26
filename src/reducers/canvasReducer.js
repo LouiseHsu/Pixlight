@@ -1,5 +1,3 @@
-import {useSelector} from "react-redux";
-
 let initialState = [];
 
 const canvasReducer =  (state = initialState, action) => {
@@ -11,9 +9,8 @@ const canvasReducer =  (state = initialState, action) => {
             let nextState = JSON.parse(JSON.stringify(state));
             let pixels = action.updatedPixels;
             for (let i = 0; i < pixels.length; i ++) {
-                nextState[pixels[i].x - 1][pixels[i].y - 1] = action.currBrushColour
+                nextState[pixels[i].x][pixels[i].y] = action.currBrushColour
             }
-            // use selector to get colour here instead?
             return nextState;
         default:
             return state

@@ -1,20 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Pixel.css'
 import {useDispatch, useSelector} from "react-redux";
 import globalMouseState from "../../util/globalMouseState";
-import {setCanvasModel} from "../../actions/setCanvasModel";
 import {updateCanvasModel} from "../../actions/updateCanvasModel";
 
 
 const Pixel = React.memo(props => {
-    const pixelState = useSelector(state => state.canvasState[props.x - 1][props.y - 1]);
+    const pixelState = useSelector(state => state.canvasState[props.x][props.y]);
     const dispatch = useDispatch();
     function handleClick () {
-        let test = {
+        let clickedPixel = {
             x : props.x,
             y : props.y,
         };
-        dispatch(updateCanvasModel([test]));
+        dispatch(updateCanvasModel(clickedPixel));
     }
 
     const onHover = () => {
