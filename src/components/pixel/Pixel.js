@@ -7,18 +7,12 @@ import {updateCanvasModel} from "../../actions/updateCanvasModel";
 
 
 const Pixel = React.memo(props => {
-    const [colour, setColour] = useState('#000000');
-    const test = useSelector(state => state.canvasState[props.x - 1][props.y - 1]);
-    const currCanvas = useSelector(state => state.canvasState);
-    const currBrushColour = useSelector(state => state.brushState.colour);
+    const pixelState = useSelector(state => state.canvasState[props.x - 1][props.y - 1]);
     const dispatch = useDispatch();
-
-    // off by 1 error
     function handleClick () {
         let test = {
             x : props.x,
             y : props.y,
-            colour : currBrushColour
         };
         dispatch(updateCanvasModel([test]));
     }
@@ -30,7 +24,7 @@ const Pixel = React.memo(props => {
         }
     };
 
-    return <div className = "Pixel" style={{backgroundColor: test}}
+    return <div className = "Pixel" style={{backgroundColor: pixelState}}
                 id={props.id}
                 onMouseEnter={onHover}
                 onMouseDown={handleClick}
