@@ -6,15 +6,15 @@ import {setCanvasModel} from "../../actions/setCanvasModel";
 
 const canvasSizeEnum = Object.freeze({
     TEST: {width: 5, height: 5},
-    SMALL: {width: 50, height: 50},
-    MEDIUM: {width: 100, height: 100},
-    LARGE: {width: 250, height: 250}
+    SMALL: {width: 25, height: 25},
+    MEDIUM: {width: 50, height: 50},
+    LARGE: {width: 75, height: 75}
 });
 
 const Canvas = props => {
     const [canvasPixels, setCanvasPixels] = useState([]);
-    let startingColour = useSelector(state => state.brushState.colour);
     const dispatch = useDispatch();
+    let startingColour = useSelector(state => state.brushState.colour);
 
     const getDimensions = () => {
         let total;
@@ -83,7 +83,8 @@ const Canvas = props => {
     }, [props.size]);
 
     return (
-        <div className="Canvas">
+        <div className="Canvas"
+             style={{maxWidth : getDimensions().height * 10}}>
             {canvasPixels}
         </div>);
 };

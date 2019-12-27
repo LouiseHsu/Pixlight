@@ -1,6 +1,5 @@
 import Canvas from '../canvas/Canvas'
 import Toolbar from '../toolbar/Toolbar'
-import {useDispatch} from 'react-redux';
 import globalMouseState from "../../util/globalMouseState";
 import './App.css';
 import React from "react";
@@ -12,9 +11,9 @@ function App() {
         mouseState.toggleLeftClick();
     };
 
-    return <div className="App" onMouseDown={handleLeftClick} onMouseUp={handleLeftClick} onClick={console.log("hello")}>
+    return <div className="App" onMouseDown={handleLeftClick} onMouseUp={handleLeftClick}>
         <Canvas
-            size={'Small'}
+            size={'Medium'}
         />
        <Toolbar/>
     </div>;
