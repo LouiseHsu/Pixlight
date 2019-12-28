@@ -10,6 +10,7 @@ const brushReducer =  (state = initialState, action) => {
             return state;
         case 'CHANGE_BRUSH_RADIUS':
             state.radius = action.radius;
+            console.log(state.radius);
             return state;
         default:
             return state

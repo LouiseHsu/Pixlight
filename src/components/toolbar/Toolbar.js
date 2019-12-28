@@ -1,19 +1,13 @@
 import React from 'react';
-import {changeBrushColour} from "../../actions/changeBrushColour";
-import {useDispatch} from "react-redux";
+import BrushPalette from "./brushPalette/BrushPalette";
+import BrushRadius from "./brushRadius/BrushRadius";
 
-function getRandomColor() {
-    let letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
 
 const Toolbar = props => {
-    const dispatch = useDispatch();
-    return  <button onClick={() => dispatch(changeBrushColour(getRandomColor()))}>Generate Random Brush</button>
+    return  <div>
+        <BrushPalette/>
+        <BrushRadius/>
+    </div>
 };
 
 export default Toolbar;
