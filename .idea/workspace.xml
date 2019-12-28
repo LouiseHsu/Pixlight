@@ -4,9 +4,9 @@
     <list default="true" id="39af03ae-352e-42eb-94d8-07d254b64862" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/canvas/Canvas.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Canvas.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pixel/Pixel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pixel/Pixel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/brushReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/brushReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/canvasReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/canvasReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
       <workItem from="1574657368868" duration="800000" />
       <workItem from="1574703549353" duration="9178000" />
       <workItem from="1575022385083" duration="5237000" />
-      <workItem from="1577434955324" duration="6336000" />
+      <workItem from="1577434955324" duration="9454000" />
     </task>
     <servers />
   </component>

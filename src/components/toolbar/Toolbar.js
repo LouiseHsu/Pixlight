@@ -1,5 +1,5 @@
 import React from 'react';
-import {updateBrush} from "../../actions/updateBrush";
+import {changeBrushColour} from "../../actions/changeBrushColour";
 import {useDispatch} from "react-redux";
 
 function getRandomColor() {
@@ -13,7 +13,7 @@ function getRandomColor() {
 
 const Toolbar = props => {
     const dispatch = useDispatch();
-    return  <button onClick={() => dispatch(updateBrush(getRandomColor()))}>Generate Random Brush</button>
+    return  <button onClick={() => dispatch(changeBrushColour(getRandomColor()))}>Generate Random Brush</button>
 };
 
 export default Toolbar;

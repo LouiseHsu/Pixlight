@@ -6,7 +6,7 @@ const canvasReducer =  (state = initialState, action) => {
             state = action.pixelArray;
             return state;
         case 'UPDATE_CANVAS_MODEL':
-            let nextState = JSON.parse(JSON.stringify(state));
+            let nextState = state;
             let pixels = action.updatedPixels;
             for (let i = 0; i < pixels.length; i ++) {
                 nextState[pixels[i].x][pixels[i].y] = action.currBrushColour
