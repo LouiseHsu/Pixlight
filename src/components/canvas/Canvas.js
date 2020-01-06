@@ -65,12 +65,15 @@ const Canvas = props => {
 
     const createCanvasModel = () => {
         let dimensions = getDimensions();
+        let isGrey = false;
 
         let pixels = [];
         for (let x = 1; x <= dimensions.width; x++) {
             let pixelRow = [];
+            isGrey = !isGrey;
             for (let y = 1; y <= dimensions.height; y++) {
-                pixelRow.push(startingColour);
+                isGrey = !isGrey;
+                pixelRow.push(isGrey? startingColour : '#C0C0C0');
             }
             pixels.push(pixelRow);
         }
