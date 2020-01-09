@@ -27,7 +27,7 @@ const BrushPalette = props => {
 
     let dispatch = useDispatch();
     return <>
-        <div id = "brush-colour" onClick={handleClick} onBlur={handleClick} style={{backgroundColor: currBrushColour}} />
+        <div id = "brush-colour" tabIndex="0" onClick={handleClick} onBlur={handleClick} style={{backgroundColor: currBrushColour}} />
         <div style = {paletteVisibility? {} : {display : 'none'}}>
             < TwitterPicker onChangeComplete = {(c, e) => handleColourChange(c, e)}/>
         </div>
