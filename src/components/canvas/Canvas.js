@@ -77,7 +77,11 @@ const Canvas = props => {
             }
             pixels.push(pixelRow);
         }
-        dispatch(setCanvasModel(pixels));
+        dispatch(setCanvasModel({
+            pixels,
+            height: dimensions.height,
+            width: dimensions.width
+        }));
     };
 
     useEffect(() => {

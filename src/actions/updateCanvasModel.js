@@ -5,13 +5,15 @@ export const updateCanvasModel = (clickedPixel) => {
 
     // to make round brushes, maybe calculate distance from center?
     // do we even need round brushes?
+    // dies if brush goes past border
     let updatedPixel = [];
     let brushState = store().getState().brushState;
+    let canvasState = store().getState().canvasState;
 
-    let startY = clickedPixel.y - brushState.radius + 1;
-    let endY = clickedPixel.y + brushState.radius - 1;
-    let startX = clickedPixel.x - brushState.radius + 1;
-    let endX = clickedPixel.x + brushState.radius - 1;
+    let startY = Math.max(clickedPixel.y - brushState.radius + 1, 0 );
+    let endY = Math.min(clickedPixel.y + brushState.radius - 1, canvasState.width - 1);
+    let startX = Math.max(clickedPixel.x - brushState.radius + 1, 0 );
+    let endX = Math.min(clickedPixel.x + brushState.radius - 1, canvasState.width - 1);
 
     for (let x = startX; x <= endX; x++) {
         for (let y = startY; y <= endY; y++) {

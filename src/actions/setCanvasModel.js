@@ -1,6 +1,8 @@
-export const setCanvasModel = (pixelArray) => {
+export const setCanvasModel = (canvasState) => {
     return {
         type: 'SET_CANVAS_MODEL',
-        pixelArray : pixelArray
+        pixelArray : canvasState.pixels,
+        height: canvasState.height,
+        width: canvasState.width
     }
 };

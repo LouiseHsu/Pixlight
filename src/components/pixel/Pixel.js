@@ -4,9 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import globalMouseState from "../../util/globalMouseState";
 import {updateCanvasModel} from "../../actions/updateCanvasModel";
 
-
 const Pixel = React.memo(props => {
-    const pixelState = useSelector(state => state.canvasState[props.x][props.y]);
+    const pixelState = useSelector(state => state.canvasState.pixels[props.x][props.y]);
     const dispatch = useDispatch();
     function handleClick () {
         let clickedPixel = {
