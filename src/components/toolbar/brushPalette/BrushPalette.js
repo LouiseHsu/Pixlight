@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeBrushColour} from "../../../actions/changeBrushColour";
 import {TwitterPicker} from 'react-color'
 import "./BrushPalette.css";
-import React from "react";
+import React, {useState} from "react";
 
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
@@ -15,16 +15,22 @@ function getRandomColor() {
 
 const BrushPalette = props => {
     let currBrushColour = useSelector(state => state.brushState.colour);
+    const [paletteVisibility, setPaletteVisibility] = useState(false);
 
     let handleColourChange = (colour, event) => {
         dispatch(changeBrushColour(colour.hex));
     };
 
+    let handleClick = () => {
+        setPaletteVisibility(!paletteVisibility);
+    };
+
     let dispatch = useDispatch();
     return <>
-        <div id = "brush-colour" style={{backgroundColor: currBrushColour}}/>
-        < TwitterPicker onChangeComplete = {(c, e) => handleColourChange(c, e)}/>
-        {/*<button onClick={() => dispatch(changeBrushColour(getRandomColor()))}>Generate Random Brush</button>*/}
+        <div id = "brush-colour" onClick={handleClick} onBlur={handleClick} style={{backgroundColor: currBrushColour}} />
+        <div style = {paletteVisibility? {} : {display : 'none'}}>
+            < TwitterPicker onChangeComplete = {(c, e) => handleColourChange(c, e)}/>
+        </div>
     </>
 };
 
